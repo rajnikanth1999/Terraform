@@ -22,8 +22,4 @@ resource "aws_security_group" "ntier_nsg" {
   tags = {
     Name = "allow_tls"
   }
-  depends_on = [
-    aws_subnet.ntier_subnets,
-    aws_vpc.ntier_vpc
-  ]
 }
