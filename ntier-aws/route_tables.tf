@@ -24,4 +24,7 @@ resource "aws_route_table" "vpc_private_route" {
     cidr_block              = "0.0.0.0/0"
     nat_gateway_id          = aws_nat_gateway.vpc_nat.id
   }
+  depends_on = [
+    aws_nat_gateway.vpc_nat
+  ]
 }

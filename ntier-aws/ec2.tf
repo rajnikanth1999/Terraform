@@ -13,6 +13,9 @@ resource "aws_instance" "ntier_ec2" {
     aws_security_group.ntier_nsg.id
   ]
   depends_on = [
+    aws_route_table.vpc_public_route,
+    aws_subnet.ntier_subnets,
     aws_eip.eip,
+    aws_key_pair.ec2_key
   ]
 }

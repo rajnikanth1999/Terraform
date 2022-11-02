@@ -6,4 +6,7 @@ resource "aws_subnet" "ntier_subnets" {
   tags = {
     "Name" = var.subnet_tags[count.index]
   }
+  depends_on = [
+    aws_vpc.ntier_vpc
+  ]
 }
