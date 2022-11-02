@@ -4,7 +4,7 @@ resource "aws_key_pair" "ec2_key" {
 }
 
 resource "aws_instance" "ntier_ec2" {
-  ami = ami-062df10d14676e201
+  ami = "ami-062df10d14676e201"
   associate_public_ip_address = aws_eip.eip
   key_name = aws_key_pair.ec2_key
   subnet_id = aws_subnet.ntier_subnets[0].id
