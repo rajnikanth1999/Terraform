@@ -6,7 +6,7 @@ resource "aws_key_pair" "ec2_key" {
 resource "aws_instance" "ntier_ec2" {
   ami = "ami-062df10d14676e201"
   associate_public_ip_address = true
-  key_name = aws_key_pair.ec2_key
+  key_name = aws_key_pair.ec2_key.key_name
   subnet_id = aws_subnet.ntier_subnets[0].id
   instance_type = "t2.micro"
   vpc_security_group_ids = [
