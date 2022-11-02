@@ -22,7 +22,4 @@ resource "aws_security_group" "ntier_nsg" {
   tags = {
     Name = "allow_tls"
   }
-  depends_on = [
-    aws_db_instance.default
-  ]
 }
